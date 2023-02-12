@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculate bank interest</title>
+  </head>
+  <body>
+    <script>
+      let loan = parseFloat(prompt("Please enter loan (million VND):"));
+      let interestRate = parseFloat(
+        prompt("Please enter interest rate (%/year):")
+      );
+      let numberYear = parseFloat(prompt("Please enter number of years:"));
+      let interest = parseFloat(
+        (numberYear * loan * (interestRate / 100)).toFixed(2)
+      );
+      document.write(
+        `The amount of principal and interest after ${numberYear} years is ${
+          loan + interest
+        } million VND`
+      );
+    </script>
+  </body>
+</html>
