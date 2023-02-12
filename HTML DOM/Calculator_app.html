@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator app</title>
+  </head>
+  <body>
+    <h1>Calculator</h1>
+    <form action="#">
+      <input type="number" id="input1" />
+      <input type="number" id="input2" />
+      <br />
+      <br />
+      <input type="submit" value="Addition(+)" id="btn-addition" />
+      <input type="submit" value="Subtraction(-)" id="btn-subtraction" />
+      <input type="submit" value="Multiplication(x)" id="btn-multiplication" />
+      <input type="submit" value="Division(/)" id="btn-division" />
+    </form>
+    <p id="result"></p>
+    <script>
+      let inputNumber1 = document.getElementById("input1");
+      let inputNumber2 = document.getElementById("input2");
+      let btnAddition = document.getElementById("btn-addition");
+      let btnSubtraction = document.getElementById("btn-subtraction");
+      let btnMultiplication = document.getElementById("btn-multiplication");
+      let btnDivision = document.getElementById("btn-division");
+      let result = document.getElementById("result");
+      btnAddition.addEventListener("click", () => {
+        result.innerHTML = `Result addition : ${
+          parseFloat(inputNumber1.value) + parseFloat(inputNumber2.value)
+        }`;
+      });
+      btnSubtraction.addEventListener("click", () => {
+        result.innerHTML = `Result subtraction : ${
+          parseFloat(inputNumber1.value) - parseFloat(inputNumber2.value)
+        }`;
+      });
+      btnMultiplication.addEventListener("click", () => {
+        result.innerHTML = `Result multiplication : ${
+          parseFloat(inputNumber1.value) * parseFloat(inputNumber2.value)
+        }`;
+      });
+      btnDivision.addEventListener("click", () => {
+        result.innerHTML = `Result division : ${
+          parseFloat(inputNumber1.value) / parseFloat(inputNumber2.value)
+        }`;
+      });
+    </script>
+  </body>
+</html>
