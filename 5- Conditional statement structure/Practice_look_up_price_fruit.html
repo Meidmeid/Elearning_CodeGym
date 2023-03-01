@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Look up the price of fruit</title>
+  </head>
+  <body>
+    <h1>Giá hoa quả</h1>
+    <form action="" title>
+      <input type="text" name="" value="" id="fruit" />
+      <input type="submit" name="" value="Xem giá" id="btn-submit" />
+    </form>
+    <h1 id="price"></h1>
+    <script>
+      let btnSubmit = document.getElementById("btn-submit");
+      btnSubmit.addEventListener("click", () => {
+        let fruitElem = document.getElementById("fruit").value;
+        let priceElem = document.getElementById("price");
+        switch (fruitElem) {
+          case "Ổi":
+            priceElem.innerHTML = "20000 VNĐ/kg";
+            break;
+          case "Dưa hấu":
+            priceElem.innerHTML = "20000 VNĐ/kg";
+            break;
+          case "Táo":
+            priceElem.innerHTML = "30000 VNĐ/kg";
+            break;
+          case "Xoài":
+            priceElem.innerHTML = "30000 VNĐ/kg";
+            break;
+          case "Cam":
+            priceElem.innerHTML = "40000 VNĐ/kg";
+            break;
+          case "Chôm Chôm":
+            priceElem.innerHTML = "40000 VNĐ/kg";
+            break;
+          case "Măng Cụt":
+            priceElem.innerHTML = "50000 VNĐ/kg";
+            break;
+          default:
+            priceElem.innerHTML = "Vui lòng nhập lại";
+            break;
+        }
+      });
+    </script>
+  </body>
+</html>
