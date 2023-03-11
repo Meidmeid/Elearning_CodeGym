@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator university score</title>
+    <style>
+      th {
+        text-align: left;
+        font-weight: 100;
+      }
+      h3 {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tính điểm ĐH khối D</h1>
+    <table>
+      <tr>
+        <th>Môn Toán</th>
+        <th>
+          <input type="number" name="Math" value="" id="math" />
+        </th>
+      </tr>
+      <tr>
+        <th>Môn Văn</th>
+        <th>
+          <input type="number" name="Literature" value="" id="literature" />
+        </th>
+      </tr>
+      <tr>
+        <th>Môn Anh</th>
+        <th>
+          <input type="number" name="English" value="" id="english" />
+        </th>
+      </tr>
+      <tr>
+        <th>Khu vực</th>
+        <th>
+          <select id="area">
+            <option value="KV1">KV1</option>
+            <option value="KV2">KV2</option>
+            <option value="KV2-NT">KV2-NT</option>
+            <option value="KV3">KV3</option>
+          </select>
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <input type="submit" value="Tính điểm" id="btn-calculator" />
+        </th>
+      </tr>
+    </table>
+    <h3 id="result"></h3>
+    <script>
+      let btnCalculator = document.getElementById("btn-calculator");
+      btnCalculator.addEventListener("click", () => {
+        let sMath = parseFloat(document.getElementById("math").value);
+        let sLiterature = parseFloat(
+          document.getElementById("literature").value
+        );
+        let sEnglish = parseFloat(document.getElementById("english").value);
+        let area = document.getElementById("area").value;
+        switch (area) {
+          case "KV1":
+            area = 0.75;
+            break;
+          case "KV2":
+            area = 0.5;
+            break;
+          case "KV2-NT":
+            area = 0.25;
+            break;
+          default:
+            area = 0;
+            break;
+        }
+        let result = document.getElementById("result");
+        result.innerHTML =
+          "Tổng điểm ĐH khối D của bạn là: " +
+          (sMath + sLiterature + sEnglish + area);
+      });
+    </script>
+  </body>
+</html>
