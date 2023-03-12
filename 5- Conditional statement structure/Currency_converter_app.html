@@ -1,15 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Currency converter app</title>
-</head>
-<body>
+    <style>
+      #container {
+        display: flex;
+      }
+      p {
+        margin-bottom: 2px;
+      }
+      form {
+        flex: 0.15;
+        text-align: center;
+        font-weight: 700;
+      }
+      #btn-convert {
+        background-color: rgba(71, 71, 255, 0.641);
+        color: white;
+        height: fit-content;
+        margin: 35px 0;
+      }
+      .w-120 {
+        width: 120px;
+      }
+      h4 {
+        color: rgba(71, 71, 255, 0.641);
+      }
+    </style>
+  </head>
+  <body>
     <h1>Currency converter app</h1>
-    <form action="#">
-        <input type="text">
-    </form>
-</body>
+    <div id="container">
+      <form action="#">
+        <p>Amount</p>
+        <input type="number" id="amount" />
+      </form>
+      <form action="#">
+        <p>From Currency</p>
+        <select name="" id="f-currency" class="w-120">
+          <option value="VND">VND</option>
+          <option value="USD">USD</option>
+        </select>
+      </form>
+      <form action="#">
+        <p>To Currency</p>
+        <select name="" id="t-currency" class="w-120">
+          <option value="VND">VND</option>
+          <option value="USD">USD</option>
+        </select>
+      </form>
+      <input
+        type="submit"
+        value="Convert"
+        id="btn-convert"
+        onclick="convert()"
+      />
+    </div>
+    <h4 id="last-result"></h4>
+    <script>
+      function convert() {
+        let amount = document.getElementById("amount").value;
+        let fCurrency = document.getElementById("f-currency").value;
+        let tCurrency = document.getElementById("t-currency").value;
+        let lastResult = document.getElementById("last-result");
+        let result = 0;
+        if (fCurrency == "VND" && tCurrency == "USD") {
+          result = amount / 23000;
+        } else if (fCurrency == "USD" && tCurrency == "VND") {
+          result = amount * 23000;
+        } else {
+          result = amount;
+        }
+        tCurrency == "VND"
+          ? (lastResult.innerHTML = `Result: ${result} VND`)
+          : (lastResult.innerHTML = `Result: ${result} USD`);
+      }
+    </script>
+  </body>
 </html>
